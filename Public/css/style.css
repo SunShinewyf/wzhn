@@ -1,0 +1,123 @@
+  *{
+	margin:0px;
+  	padding:0px;
+  }
+  
+  body{
+  	margin:0 auto;
+	width:980px;
+  	background-color:#f5f5f5;
+  	text-align:center;
+  	font:16px/24px "Microsoft Yahei", Tahoma, Helvetica, Arial, Verdana, "\5b8b\4f53", sans-serif;
+  }
+  
+  #header{
+	width:980px;
+  	margin:0 auto;
+  	text-align:center;
+  	height:80px;
+  	background-color:#ffffff;
+
+  }
+  
+  .logo{
+	float:left;
+  	margin-left:20px;
+  	position:relative;
+  	top:20px;
+  	left:100px;
+  }
+  .search{
+	 height:80px;
+  	 width:770px;
+  	 float:right;
+  }
+  
+  #search_box{
+	width:400px;
+  	height:30px;
+  	border-top:1px solid #979797;
+  	border-left:1px solid #979797;
+  	border-bottom: 1px solid #BCBCBC;
+  	border-right:1px solid #9e1da3;
+  	background-color:#ffffff;
+  	font-size:14px;
+  	font-family:Microsoft Yahei;
+  	margin-top:25px;
+  	padding-left:14px;
+  	line-height:30px;
+  }
+  
+  #btn{
+	border-radius: 0 2px 2px 0;
+    border: solid 2px #9e1da3;
+	height: 32px;
+	width: 110px;
+	cursor: pointer;
+	outline: none;
+	font: 15px 'microsoft yahei', sans-serif;
+	color: #ffffff;
+	background-color:#9e1da3;
+  	position:relative;
+  	left:-5px;
+  	top:1px;
+  }
+  
+  
+  #container{
+	width:980px;
+  	height:400px;
+  	margin:0 auto;
+  	background-color:#ffffff;
+  	display:block;
+  	margin-top:25px;
+  	font: 15px 'microsoft yahei', sans-serif;
+  	
+  }
+  
+  .main_left{
+	float:left;
+  	width:220px;
+  	height:auto;
+
+  	
+  }
+  
+  .module_ul{
+	width:220px;
+  	height:auto;
+  	
+  	
+  }
+  .module_ul li{
+	list-style:none;
+  	font: 18px bold 'microsoft yahei', sans-serif;
+  	height:40px;
+  	cursor:pointer;
+  	line-height:40px;
+
+  	
+  }
+  
+  .module_ul li a{
+  	  	text-decoration: none;
+  	 	color:#ffffff;
+	
+    
+  }
+  .module_ul .hot{
+	background-color:#9e1da3;
+  }
+  #footer{
+  	background-color:#ffffff;
+  	display:block;
+  	font:14px bold 'microsoft yahei', sans-serif;
+	width:980px;
+  	height:70px;
+  	margin:0 auto;
+  	color:#606060;
+  	margin-top:25px;
+  	padding-top:10px;
+  
+  	
+  }
