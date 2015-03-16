@@ -11,7 +11,7 @@
 <body>
       <div id="header">
          <div class="logo">
-             <img src="__PUBLIC__/images/static/logo.png"/>
+             <img src="__PUBLIC__/images/icon/logo.jpg"/>
          </div>
          <div class="search">
               <form id="form">

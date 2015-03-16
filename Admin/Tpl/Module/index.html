@@ -1,0 +1,56 @@
+<include file="Public:header"/>
+  <div id="sidebar">
+     <include file="Public:sidebar"/>
+   </div>
+  
+  <div id="main">
+      <div class="page-title">
+            	添加资讯&nbsp;&nbsp; 
+      </div>
+         
+         <div class="catalog">
+             <a href="">首页</a>&nbsp;>&nbsp;<a href="">添加资讯</a>
+         </div>
+         
+         <div class="parts">
+           <div class="part-desc">
+            <h>模块说明</h>
+            <p1>本模块只能由超级管理员才能更改，在该模块中，你可以浏览各个模块，还可以对模块进行添加</p1>
+           </div>
+         </div>
+         
+         <div class="parts" style="width:540px;">
+           <div class="module-list">
+              <h style="width:520px">模块列表</h>
+              <table style="width:540px">
+                 <tr>
+                    <th>编号</th>
+                    <th>模块名</th>
+                    <th>模块创立时间</th>
+                    <th>模块备注</th>
+                    <th>操作</th>
+                 </tr>
+              
+              </table>
+              </div>
+           </div>
+           
+           <div class="parts" style="width:492px;margin-left:10px">
+              <div class="module-add">
+                 <h style="width:472px;">模块添加</h>
+                 <form action="" method="post">
+                      <label for="name">*模块名</label>
+                      <input type="text" name="nickname" id="nickname" class="box-control" placeholder="填写模块名称" autocomplete="off"/>
+                      <label for="manger">*模块管理员</label>
+                      <select class="box-control">
+                         <option value="0" selected>root管理员</option>
+                         <option value="1">普通管理员</option>
+                      </select>
+                      <input type="submit" id="btn" value="添加"/>
+                 </form>
+              </div>
+           </div>
+     </div>
+  
+  </body>
+  </html>
