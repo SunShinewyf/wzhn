@@ -289,7 +289,18 @@
 	     background:#1f600e;
        }
        
-       .parts #editor{
-	height:500px;
-       }
+    
+       
+ #editor{
+	width:600px;
+ 	height:380px;
+ }
+
+ .parts .text-part{
+	float:right;
+ 	position:relative;
+ 	left:-10px;
+ 	top:-370px;
+ 	
+ }
        
