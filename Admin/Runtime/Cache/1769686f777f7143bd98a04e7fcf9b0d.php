@@ -38,8 +38,8 @@
 	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">管理员列表</a></li>
-			<li><a href="">添加管理员</a></li>
+			<li><a href="__APP__/Manger/index">管理员列表</a></li>
+			<li><a href="__APP__/Manger/add">添加管理员</a></li>
 		  </ul>
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
@@ -51,7 +51,6 @@
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
 			<li><a href="__APP__/Module/index">模块列表</a></li>
-			<li><a href="__APP__/Module/index">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -82,14 +81,13 @@
               <h style="width:520px">模块列表</h>
               <table style="width:540px">
                  <tr>
-                    <th>编号</th>
-                    <th>模块名</th>
-                    <th>模块创立时间</th>
-                    <th>模块备注</th>
-                    <th>操作</th>
+                    <th class="first">编号</th>
+                    <th class="first">模块名</th>
+                    <th class="first">模块创立时间</th>
+                    <th class="first">操作</th>
                  </tr>
                <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					<th><?php echo ($vo["mid"]); ?></th><th><?php echo ($vo["mname"]); ?></th><th><?php echo ($vo["mtime"]); ?></th><th></th><th><a href="__APP__/Module/ndelete/id/<?php echo ($vo["mid"]); ?>" onclick="return confirm('确定要删除这个模块吗?');">删除</a></th>
+					<th><?php echo ($vo["mid"]); ?></th><th><?php echo ($vo["mname"]); ?></th><th><?php echo ($vo["mtime"]); ?></th><th><a href="__APP__/Module/ndelete/id/<?php echo ($vo["mid"]); ?>" onclick="return confirm('确定要删除这个模块吗?');">删除</a></th>
 				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
               </table>
 			  <br>

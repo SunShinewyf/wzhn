@@ -38,8 +38,8 @@
 	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">管理员列表</a></li>
-			<li><a href="">添加管理员</a></li>
+			<li><a href="__APP__/Manger/index">管理员列表</a></li>
+			<li><a href="__APP__/Manger/add">添加管理员</a></li>
 		  </ul>
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
@@ -51,7 +51,6 @@
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
 			<li><a href="__APP__/Module/index">模块列表</a></li>
-			<li><a href="__APP__/Module/index">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -77,15 +76,7 @@
                <p1>添加时，必须指明该文章所属模块</p1>
             </div>
          </div>
-         
-      <!--   <div class="parts" style="width:540px;">
-            <div class="news-content">
-               <h style="width:520px;">编辑正文</h>
-               <script type="text/plain" id="editor" name="content">
-  				</script>
-            </div>
-         </div>  
-		 -->
+    
          
          <div class="parts"">
          <div class="news-add">
@@ -100,8 +91,8 @@
                     <input type="text" name="author" id="author" class="box-control" placeholder="填写文章作者/来源" autocomplete="off"/>
                <label for="belong">新闻所属模块</label>
                <select  class="box-control" name="module">
-                   <option  value="0" selected>看电影</option>
-                   <option value="1">校园活动</option>
+                   <option value="0" selected>请选择资讯所属模块</option>
+                   <?php if(is_array($result)): $i = 0; $__LIST__ = $result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="{vo['mid']}"><?php echo ($vo['mname']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                </select>
               </br>
                <input type="submit" id="btn" value="发表"/>

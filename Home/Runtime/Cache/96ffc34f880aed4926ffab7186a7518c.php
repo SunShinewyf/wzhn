@@ -15,6 +15,10 @@
          <div class="article-detail">
            <font class="date">发布于:</font>&nbsp;&nbsp;<font class="skan">浏览次数:</font>&nbsp;&nbsp;<font class="type">分类</font>
          </div>
+         
+         <div class="content">
+         
+         </div>
       </div>
    </div>
    </body>

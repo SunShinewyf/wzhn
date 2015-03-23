@@ -51,7 +51,6 @@
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
 			<li><a href="__APP__/Module/index">模块列表</a></li>
-			<li><a href="__APP__/Module/add">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -85,13 +84,13 @@
                 <h>管理员列表</h>
                 <table class="manger-table">
                     <tr>
-                      <th>编号</th>
-                      <th>昵称</th>
-                      <th>权限</th>
-                      <th>备注信息</th>
-                      <th>添加者</th>
-                      <th>添加时间</th>
-                      <th>操作</th>
+                      <th class="first">编号</th>
+                      <th class="first">昵称</th>
+                      <th class="first">权限</th>
+                      <th class="first">备注信息</th>
+                      <th class="first">添加者</th>
+                      <th class="first">添加时间</th>
+                      <th class="first">操作</th>
                     </tr>
                 </table>
             </div>

@@ -35,23 +35,22 @@
        </div>
 	   <div id="left">
 		  <ul class="accordion">
-	   <li id="zero" class="home"><a href="#zero">首页</a>
+	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">管理员列表</a></li>
-			<li><a href="">添加管理员</a></li>
+			<li><a href="__APP__/Manger/index">管理员列表</a></li>
+			<li><a href="__APP__/Manger/add">添加管理员</a></li>
 		  </ul>
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
 		  <ul class="sub-menu">
-			<li class="word"><a href="">资讯列表</a></li>
-			<li class="word"><a href="">资讯添加</a></li>
+			<li class="word"><a href="__APP__/News/index">资讯列表</a></li>
+			<li class="word"><a href="__APP__/News/add">资讯添加</a></li>
 		  </ul>
 	   </li>
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">模块列表</a></li>
-			<li><a href="">添加模块</a></li>
+			<li><a href="__APP__/Module/index">模块列表</a></li>
 		  </ul>
 	   </li>   
 	  </ul>

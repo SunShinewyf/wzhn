@@ -38,8 +38,8 @@
 	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">管理员列表</a></li>
-			<li><a href="">添加管理员</a></li>
+			<li><a href="__APP__/Manger/index">管理员列表</a></li>
+			<li><a href="__APP__/Manger/add">添加管理员</a></li>
 		  </ul>
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
@@ -51,7 +51,6 @@
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
 			<li><a href="__APP__/Module/index">模块列表</a></li>
-			<li><a href="__APP__/Module/index">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -106,19 +105,20 @@
                 <h>资讯列表</h>
                 <table>
                     <tr>
-                       <th>编号</th>
-                       <th>标题</th>
-                       <th>作者</th>
-                       <th>内容</th>
-                       <th>所属模块</th>
-                       <th>图片</th>
-                       <th>发布/更新日期</th>
-                       <th>操作</th>
+                       <th class="first">编号</th>
+                       <th class="first">标题</th>
+                       <th class="first">作者</th>
+                       <th class="first">内容</th>
+                       <th class="first">所属模块</th>
+                       <th class="first">图片</th>
+                       <th class="first">发布/更新日期</th>
+                       <th class="first">阅读次数</th>
+                       <th class="first">操作</th>
                     
                     </tr>
                 
 				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					<th><?php echo ($vo["nid"]); ?></th><th><?php echo ($vo["ntitle"]); ?></th><th><?php echo ($vo["nfrom"]); ?></th><th><?php echo (string::msubstr($vo["ncontent"],0,25)); ?></th><th><?php if($vo["mid"] == 0): ?>看电影<?php else: ?>校园活动<?php endif; ?></th><th><?php echo ($vo["nimage"]); ?></th><th><?php echo ($vo["nupdate"]); ?></th><th><a href="__APP__/News/ndelete/id/<?php echo ($vo["nid"]); ?>" onclick="return confirm('确定要删除这条信息吗?');">删除</a></th>
+					<th><?php echo ($vo["nid"]); ?></th><th><?php echo ($vo["ntitle"]); ?></th><th><?php echo ($vo["nfrom"]); ?></th><th></th><th><?php if($vo["mid"] == 0): ?>看电影<?php else: ?>校园活动<?php endif; ?></th><th><?php echo ($vo["nimage"]); ?></th><th><?php echo ($vo["nupdate"]); ?></th><th><?php echo ($vo["time"]); ?></th><th><a href="__APP__/News/ndelete/id/<?php echo ($vo["nid"]); ?>" onclick="return confirm('确定要删除这条信息吗?');">删除</a></th>
 				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </table>
 				<br>

@@ -201,10 +201,14 @@
 	   background-color: #ffffff;
       }
       
-      #main table th{
+      #main table .first{
 	   padding: 8px;
 	   background-color: #6b8f1a;
       }
+      
+       #main table th{
+	padding:8px;
+       }
       
       #main form{
 	     font:13px/16px "Microsoft Yahei", Tahoma, Helvetica, Arial, Verdana, "\5b8b\4f53", sans-serif;

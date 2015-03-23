@@ -19,15 +19,7 @@
                <p1>添加时，必须指明该文章所属模块</p1>
             </div>
          </div>
-         
-      <!--   <div class="parts" style="width:540px;">
-            <div class="news-content">
-               <h style="width:520px;">编辑正文</h>
-               <script type="text/plain" id="editor" name="content">
-  				</script>
-            </div>
-         </div>  
-		 -->
+    
          
          <div class="parts"">
          <div class="news-add">
@@ -42,8 +34,10 @@
                     <input type="text" name="author" id="author" class="box-control" placeholder="填写文章作者/来源" autocomplete="off"/>
                <label for="belong">新闻所属模块</label>
                <select  class="box-control" name="module">
-                   <option  value="0" selected>看电影</option>
-                   <option value="1">校园活动</option>
+                   <option value="0" selected>请选择资讯所属模块</option>
+                   <volist name="result" id="vo">
+                            <option value="{vo['mid']}">{$vo['mname']}</option>
+                   </volist>
                </select>
               </br>
                <input type="submit" id="btn" value="发表"/>

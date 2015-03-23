@@ -4,6 +4,7 @@ class NewsAction extends Action {
 	    // $m=M("news");//测试数据库数据
 		// $arr=$m->select();
 		// print_r($arr);
+		
 		$m=new Model("news");
 		import("ORG.Util.String");
 		import('ORG.Util.Page');// 导入分页类
@@ -53,6 +54,11 @@ class NewsAction extends Action {
     }
     public function add()
     {
+        $module=new Model("module");
+        $result=$module->field('mid,mname')->select();
+//         dump($result);
+//         exit;
+        $this->assign("result",$result);
         $this->display();
     }
 	//资料上传到数据库

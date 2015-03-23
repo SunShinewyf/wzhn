@@ -24,15 +24,14 @@
               <h style="width:520px">模块列表</h>
               <table style="width:540px">
                  <tr>
-                    <th>编号</th>
-                    <th>模块名</th>
-                    <th>模块创立时间</th>
-                    <th>模块备注</th>
-                    <th>操作</th>
+                    <th class="first">编号</th>
+                    <th class="first">模块名</th>
+                    <th class="first">模块创立时间</th>
+                    <th class="first">操作</th>
                  </tr>
                <volist name="data" id="vo">
 				<tr>
-					<th>{$vo.mid}</th><th>{$vo.mname}</th><th>{$vo.mtime}</th><th></th><th><a href="__APP__/Module/ndelete/id/{$vo.mid}" onclick="return confirm('确定要删除这个模块吗?');">删除</a></th>
+					<th>{$vo.mid}</th><th>{$vo.mname}</th><th>{$vo.mtime}</th><th><a href="__APP__/Module/ndelete/id/{$vo.mid}" onclick="return confirm('确定要删除这个模块吗?');">删除</a></th>
 				</tr>
 				</volist>
               </table>
