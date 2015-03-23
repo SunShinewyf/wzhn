@@ -35,7 +35,7 @@
        </div>
 	   <div id="left">
 		  <ul class="accordion">
-	   <li id="zero" class="home"><a href="#zero">首页</a>
+	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
 			<li><a href="">管理员列表</a></li>
@@ -44,14 +44,14 @@
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
 		  <ul class="sub-menu">
-			<li class="word"><a href="">资讯列表</a></li>
-			<li class="word"><a href="">资讯添加</a></li>
+			<li class="word"><a href="__APP__/News/index">资讯列表</a></li>
+			<li class="word"><a href="__APP__/News/add">资讯添加</a></li>
 		  </ul>
 	   </li>
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">模块列表</a></li>
-			<li><a href="">添加模块</a></li>
+			<li><a href="__APP__/Module/index">模块列表</a></li>
+			<li><a href="__APP__/Module/index">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -90,16 +90,16 @@
          <div class="parts"">
          <div class="news-add">
             <h>填写信息</h>
-            <form action="" method="post">
+            <form name="nform"action="__URL__/upload" method="post" onsubmit="return check();">
 			 <script type="text/plain" id="editor" name="content">
   				</script>
   				<div class="text-part">
                <label for="title">*新闻标题</label>
                <input type="text" name="title" id="title" class="box-control" placeholder="填写文章标题" autocomplete="off"/>
                <label for="author">*新闻作者/来源</label>
-                    <input type="text" name="author" id="author" class="box-control" placeholder="填写文章标题" autocomplete="off"/>
+                    <input type="text" name="author" id="author" class="box-control" placeholder="填写文章作者/来源" autocomplete="off"/>
                <label for="belong">新闻所属模块</label>
-               <select  class="box-control">
+               <select  class="box-control" name="module">
                    <option  value="0" selected>看电影</option>
                    <option value="1">校园活动</option>
                </select>
@@ -119,4 +119,21 @@
     //实例化编辑器
     //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
     UE.getEditor('editor');
+</script>
+<script type="text/javascript">
+function check()
+{
+  if(document.nform.title.value=="")
+  {
+  alert("请填写文章标题!");
+  document.nform.title.focus();
+  return false;
+  }
+  if(document.nform.author.value=="")
+  {
+  alert("请填写文章作者/来源!");
+  document.nform.author.focus();
+  return false;
+  }
+}
 </script>

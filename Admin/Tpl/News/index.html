@@ -21,16 +21,16 @@
          </div>
          <div class="parts" style="width:574px;margin-left:20px;height:156px;">
              <h style="width:553px">搜索</h>
-             <form id="search-news" action="" method="post">
+             <form id="search-news" action="__APP__/News/index" method="get">
                    &nbsp;&nbsp;<span>搜索选项</span>&nbsp;&nbsp;:
                    <select id="option" name="option-key" class="select-control">
-                        <option selected value="0">按标题：</option>
-                        <option value="1">按上传者:</option>
+                        <option selected value="0">按标题</option>
+                        <option value="1">按上传者</option>
                         <option value="2">阅读量</option>
                     </select>
                     
                     <input type="text" name="key" class="select-control" style="width:230px;"/>
-                    <input type="submit" id="sea-btn" value="搜索"/>
+                    <input type="submit" id="sea-btn" value="搜索" name="submit"/>
                     
                     &nbsp;&nbsp;<span>选择模块</span>&nbsp;&nbsp;: 
                     <select id="option" name="module" class="select-control" style="margin-top:-12px">
@@ -54,13 +54,19 @@
                        <th>内容</th>
                        <th>所属模块</th>
                        <th>图片</th>
-                       <th>发布日期</th>
-                       <th>更新时间</th>
+                       <th>发布/更新日期</th>
+                       <th>操作</th>
                     
                     </tr>
                 
+				<volist name="data" id="vo">
+				<tr>
+					<th>{$vo.nid}</th><th>{$vo.ntitle}</th><th>{$vo.nfrom}</th><th>{$vo.ncontent|String::msubstr=0,25}</th><th><if condition="$vo.mid eq 0">看电影<else/>校园活动</if></th><th>{$vo.nimage}</th><th>{$vo.nupdate}</th><th><a href="__APP__/News/ndelete/id/{$vo.nid}" onclick="return confirm('确定要删除这条信息吗?');">删除</a></th>
+				</tr>
+				</volist>
                 </table>
-            
+				<br>
+                 <p align="center">{$show}</p>
             </div>
           
          </div>

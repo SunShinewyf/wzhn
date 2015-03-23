@@ -35,7 +35,7 @@
        </div>
 	   <div id="left">
 		  <ul class="accordion">
-	   <li id="zero" class="home"><a href="#zero">首页</a>
+	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
 			<li><a href="">管理员列表</a></li>
@@ -44,14 +44,14 @@
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
 		  <ul class="sub-menu">
-			<li class="word"><a href="">资讯列表</a></li>
-			<li class="word"><a href="">资讯添加</a></li>
+			<li class="word"><a href="__APP__/News/index">资讯列表</a></li>
+			<li class="word"><a href="__APP__/News/add">资讯添加</a></li>
 		  </ul>
 	   </li>
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">模块列表</a></li>
-			<li><a href="">添加模块</a></li>
+			<li><a href="__APP__/Module/index">模块列表</a></li>
+			<li><a href="__APP__/Module/index">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -79,16 +79,16 @@
          </div>
          <div class="parts" style="width:574px;margin-left:20px;height:156px;">
              <h style="width:553px">搜索</h>
-             <form id="search-news" action="" method="post">
+             <form id="search-news" action="__APP__/News/index" method="get">
                    &nbsp;&nbsp;<span>搜索选项</span>&nbsp;&nbsp;:
                    <select id="option" name="option-key" class="select-control">
-                        <option selected value="0">按标题：</option>
-                        <option value="1">按上传者:</option>
+                        <option selected value="0">按标题</option>
+                        <option value="1">按上传者</option>
                         <option value="2">阅读量</option>
                     </select>
                     
                     <input type="text" name="key" class="select-control" style="width:230px;"/>
-                    <input type="submit" id="sea-btn" value="搜索"/>
+                    <input type="submit" id="sea-btn" value="搜索" name="submit"/>
                     
                     &nbsp;&nbsp;<span>选择模块</span>&nbsp;&nbsp;: 
                     <select id="option" name="module" class="select-control" style="margin-top:-12px">
@@ -112,13 +112,17 @@
                        <th>内容</th>
                        <th>所属模块</th>
                        <th>图片</th>
-                       <th>发布日期</th>
-                       <th>更新时间</th>
+                       <th>发布/更新日期</th>
+                       <th>操作</th>
                     
                     </tr>
                 
+				<?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+					<th><?php echo ($vo["nid"]); ?></th><th><?php echo ($vo["ntitle"]); ?></th><th><?php echo ($vo["nfrom"]); ?></th><th><?php echo (string::msubstr($vo["ncontent"],0,25)); ?></th><th><?php if($vo["mid"] == 0): ?>看电影<?php else: ?>校园活动<?php endif; ?></th><th><?php echo ($vo["nimage"]); ?></th><th><?php echo ($vo["nupdate"]); ?></th><th><a href="__APP__/News/ndelete/id/<?php echo ($vo["nid"]); ?>" onclick="return confirm('确定要删除这条信息吗?');">删除</a></th>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 </table>
-            
+				<br>
+                 <p align="center"><?php echo ($show); ?></p>
             </div>
           
          </div>

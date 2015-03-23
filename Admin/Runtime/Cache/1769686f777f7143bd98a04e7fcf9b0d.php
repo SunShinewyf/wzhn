@@ -35,7 +35,7 @@
        </div>
 	   <div id="left">
 		  <ul class="accordion">
-	   <li id="zero" class="home"><a href="#zero">首页</a>
+	   <li id="zero" class="home"><a href="__APP__/Index/index">首页</a>
 	   <li id="one" class="manger"> <a href="#one">管理员管理</a>
 		  <ul class="sub-menu">
 			<li><a href="">管理员列表</a></li>
@@ -44,14 +44,14 @@
 	   </li>
 	   <li id="two" class="info"> <a href="#two">资讯管理</a>
 		  <ul class="sub-menu">
-			<li class="word"><a href="">资讯列表</a></li>
-			<li class="word"><a href="">资讯添加</a></li>
+			<li class="word"><a href="__APP__/News/index">资讯列表</a></li>
+			<li class="word"><a href="__APP__/News/add">资讯添加</a></li>
 		  </ul>
 	   </li>
 	   <li id="three" class="module"> <a href="#three">模块管理</a>
 		  <ul class="sub-menu">
-			<li><a href="">模块列表</a></li>
-			<li><a href="">添加模块</a></li>
+			<li><a href="__APP__/Module/index">模块列表</a></li>
+			<li><a href="__APP__/Module/index">添加模块</a></li>
 		  </ul>
 	   </li>   
 	  </ul>
@@ -88,19 +88,25 @@
                     <th>模块备注</th>
                     <th>操作</th>
                  </tr>
-              
+               <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+					<th><?php echo ($vo["mid"]); ?></th><th><?php echo ($vo["mname"]); ?></th><th><?php echo ($vo["mtime"]); ?></th><th></th><th><a href="__APP__/Module/ndelete/id/<?php echo ($vo["mid"]); ?>" onclick="return confirm('确定要删除这个模块吗?');">删除</a></th>
+				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
               </table>
+			  <br>
+                 <p align="center"><?php echo ($show); ?></p>
               </div>
            </div>
            
            <div class="parts" style="width:492px;margin-left:10px">
               <div class="module-add">
                  <h style="width:472px;">模块添加</h>
-                 <form action="" method="post">
+                 <form action="__APP__/Module/add" method="post" name="mform" onsubmit="return check();">
                       <label for="name">*模块名</label>
                       <input type="text" name="nickname" id="nickname" class="box-control" placeholder="填写模块名称" autocomplete="off"/>
+					   <!--<label for="name">*模块使用者</label>
+                      <input type="text" name="ofuser" id="ofuser" class="box-control" placeholder="填写名称" autocomplete="off"/> -->
                       <label for="manger">*模块管理员</label>
-                      <select class="box-control">
+                      <select class="box-control" name="muser">
                          <option value="0" selected>root管理员</option>
                          <option value="1">普通管理员</option>
                       </select>
@@ -112,3 +118,14 @@
   
   </body>
   </html>
+  <script type="text/javascript">
+function check()
+{
+  if(document.mform.nickname.value=="")
+  {
+  alert("请填写模块名称!");
+  document.mform.nickname.focus();
+  return false;
+  }
+}
+</script>
